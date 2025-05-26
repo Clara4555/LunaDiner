@@ -106,6 +106,43 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="py-16 bg-charcoal-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-cream mb-4">
+              Find Us in the Heart of the City
+            </h2>
+            <p className="text-cream/80 text-lg max-w-2xl mx-auto">
+              Located in the vibrant downtown district, Luna Diner is easily accessible and surrounded by the city's cultural attractions
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-charcoal-800 rounded-xl overflow-hidden shadow-2xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="h-64 md:h-96 bg-gradient-to-br from-charcoal-700 to-charcoal-800 flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-gold text-4xl mb-4">📍</div>
+                <h3 className="text-cream font-semibold text-xl mb-2">Luna Diner Location</h3>
+                <p className="text-cream/80">123 Moonlight Avenue, Starville, NY 10001</p>
+                <p className="text-cream/60 text-sm mt-2">Interactive map would be integrated here</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-20 bg-charcoal-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
@@ -132,21 +169,52 @@ export default function Contact() {
               {/* Social Media */}
               <motion.div {...fadeInUp}>
                 <h3 className="font-playfair text-2xl font-semibold text-cream mb-4">
-                  Follow Us
+                  Follow Our Journey
                 </h3>
+                <p className="text-cream/80 mb-6">
+                  Stay connected with Luna Diner and be the first to know about special events, 
+                  new menu items, and exclusive dining experiences.
+                </p>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (
                     <motion.a
                       key={social.label}
                       href={social.href}
-                      className="bg-charcoal-700 text-cream w-12 h-12 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
+                      className="bg-charcoal-700 text-cream w-14 h-14 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all duration-300 shadow-lg"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.95 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1, duration: 0.5 }}
+                      viewport={{ once: true }}
                     >
-                      <social.icon size={18} />
+                      <social.icon size={20} />
                     </motion.a>
                   ))}
                 </div>
+              </motion.div>
+
+              {/* Additional Info */}
+              <motion.div 
+                className="bg-charcoal-700 p-6 rounded-xl"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="font-playfair text-xl font-semibold text-gold mb-4">
+                  Planning a Special Event?
+                </h4>
+                <p className="text-cream/80 mb-4">
+                  Luna Diner offers private dining rooms and custom catering services for 
+                  birthdays, anniversaries, corporate events, and other special occasions.
+                </p>
+                <ul className="text-cream/70 text-sm space-y-2">
+                  <li>• Private dining rooms for 8-50 guests</li>
+                  <li>• Custom menu planning with our chefs</li>
+                  <li>• Professional event coordination</li>
+                  <li>• Audio/visual equipment available</li>
+                </ul>
               </motion.div>
             </motion.div>
 

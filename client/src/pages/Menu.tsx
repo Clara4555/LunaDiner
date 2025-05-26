@@ -273,22 +273,98 @@ export default function Menu() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-charcoal-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pt-24 pb-12 bg-charcoal-800 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <motion.div
+            className="absolute top-20 left-10 w-32 h-32 bg-gold/5 rounded-full blur-xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 right-10 w-40 h-40 bg-gold/5 rounded-full blur-xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.4, 0.2, 0.4],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1
-            className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4"
-            {...fadeInUp}
+            className="font-playfair text-4xl md:text-6xl font-bold text-cream mb-6"
+            initial={{ opacity: 0, y: 50, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            Our Menu
+            <motion.span
+              className="inline-block"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              Culinary
+            </motion.span>{" "}
+            <motion.span
+              className="inline-block text-gold"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              Artistry
+            </motion.span>
           </motion.h1>
+          
           <motion.p
-            className="text-xl text-cream/80 max-w-2xl mx-auto"
+            className="text-xl text-cream/80 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            Embark on a gastronomic journey where every dish is a masterpiece, 
+            carefully crafted with passion, precision, and the finest ingredients
+          </motion.p>
+
+          <motion.div
+            className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-cream/60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 1, duration: 0.8 }}
           >
-            Discover our carefully crafted dishes, each telling a story of flavor and passion
-          </motion.p>
+            <motion.span
+              className="bg-charcoal-700 px-4 py-2 rounded-full"
+              whileHover={{ scale: 1.05, backgroundColor: "hsl(var(--gold-400))", color: "hsl(var(--charcoal-900))" }}
+              transition={{ duration: 0.3 }}
+            >
+              ✨ Chef's Specials
+            </motion.span>
+            <motion.span
+              className="bg-charcoal-700 px-4 py-2 rounded-full"
+              whileHover={{ scale: 1.05, backgroundColor: "hsl(var(--gold-400))", color: "hsl(var(--charcoal-900))" }}
+              transition={{ duration: 0.3 }}
+            >
+              🌱 Farm-to-Table
+            </motion.span>
+            <motion.span
+              className="bg-charcoal-700 px-4 py-2 rounded-full"
+              whileHover={{ scale: 1.05, backgroundColor: "hsl(var(--gold-400))", color: "hsl(var(--charcoal-900))" }}
+              transition={{ duration: 0.3 }}
+            >
+              🍷 Wine Pairing Available
+            </motion.span>
+          </motion.div>
         </div>
       </section>
 
