@@ -243,22 +243,160 @@ const menuItems: MenuItem[] = [
     allergens: ["Dairy"],
     calories: 150,
     chef: "Barista Night"
+  },
+
+  // Asian Fusion
+  {
+    id: "16",
+    name: "Miso Black Cod",
+    description: "Melt-in-your-mouth black cod marinated in sweet miso, served with pickled vegetables and jasmine rice",
+    price: 38,
+    image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "asian",
+    prepTime: "25 mins",
+    rating: 4.9,
+    ingredients: ["Black cod", "Sweet miso", "Mirin", "Sake", "Pickled vegetables", "Jasmine rice"],
+    allergens: ["Fish", "Soy"],
+    calories: 420,
+    chef: "Chef Akira Moon"
+  },
+  {
+    id: "17",
+    name: "Korean BBQ Wagyu",
+    description: "Premium wagyu beef with Korean bulgogi marinade, kimchi, and steamed buns",
+    price: 42,
+    image: "https://images.unsplash.com/photo-1553163147-622ab57be1c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "asian",
+    prepTime: "20 mins",
+    rating: 4.8,
+    ingredients: ["Wagyu beef", "Bulgogi marinade", "Kimchi", "Steamed buns", "Sesame oil"],
+    allergens: ["Soy", "Gluten", "Sesame"],
+    calories: 580,
+    chef: "Chef Akira Moon"
+  },
+  {
+    id: "18",
+    name: "Thai Coconut Curry",
+    description: "Aromatic red curry with prawns, Thai basil, and coconut milk, served with fragrant rice",
+    price: 28,
+    image: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "asian",
+    prepTime: "18 mins",
+    rating: 4.7,
+    ingredients: ["Tiger prawns", "Red curry paste", "Coconut milk", "Thai basil", "Jasmine rice"],
+    allergens: ["Shellfish"],
+    calories: 380,
+    chef: "Chef Akira Moon"
+  },
+
+  // Mediterranean
+  {
+    id: "19",
+    name: "Lamb Moussaka",
+    description: "Traditional Greek layered dish with lamb, eggplant, and béchamel sauce",
+    price: 32,
+    image: "https://images.unsplash.com/photo-1621996346565-e3dbc63d1bbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "mediterranean",
+    prepTime: "35 mins",
+    rating: 4.6,
+    ingredients: ["Ground lamb", "Eggplant", "Béchamel sauce", "Tomatoes", "Herbs"],
+    allergens: ["Dairy", "Gluten"],
+    calories: 520,
+    chef: "Chef Sofia Ocean"
+  },
+  {
+    id: "20",
+    name: "Grilled Octopus",
+    description: "Tender octopus with olive oil, lemon, capers, and roasted vegetables",
+    price: 36,
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "mediterranean",
+    prepTime: "30 mins",
+    rating: 4.9,
+    ingredients: ["Fresh octopus", "Extra virgin olive oil", "Lemon", "Capers", "Mediterranean vegetables"],
+    allergens: [],
+    calories: 320,
+    chef: "Chef Sofia Ocean"
+  },
+  {
+    id: "21",
+    name: "Paella Valenciana",
+    description: "Traditional Spanish rice dish with saffron, chicken, rabbit, and green beans",
+    price: 45,
+    image: "https://images.unsplash.com/photo-1534080564583-6be75777b70a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "mediterranean",
+    prepTime: "40 mins",
+    rating: 4.8,
+    ingredients: ["Bomba rice", "Saffron", "Chicken", "Rabbit", "Green beans", "Paprika"],
+    allergens: [],
+    calories: 480,
+    chef: "Chef Sofia Ocean"
+  },
+
+  // Latin American
+  {
+    id: "22",
+    name: "Argentinian Ribeye",
+    description: "Grass-fed ribeye steak with chimichurri sauce and grilled vegetables",
+    price: 48,
+    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "latin",
+    prepTime: "25 mins",
+    rating: 4.9,
+    ingredients: ["Grass-fed ribeye", "Chimichurri", "Grilled vegetables", "Sea salt"],
+    allergens: [],
+    calories: 620,
+    chef: "Chef Carlos Sol"
+  },
+  {
+    id: "23",
+    name: "Ceviche Mixto",
+    description: "Fresh fish and prawns marinated in lime juice with red onions and cilantro",
+    price: 26,
+    image: "https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "latin",
+    prepTime: "15 mins",
+    rating: 4.8,
+    ingredients: ["Fresh fish", "Tiger prawns", "Lime juice", "Red onions", "Cilantro", "Aji peppers"],
+    allergens: ["Fish", "Shellfish"],
+    calories: 220,
+    chef: "Chef Carlos Sol"
+  },
+  {
+    id: "24",
+    name: "Empanadas de Carne",
+    description: "Handmade pastries filled with spiced beef, onions, and hard-boiled eggs",
+    price: 18,
+    image: "https://images.unsplash.com/photo-1625947030309-08e46c8f56b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    category: "latin",
+    prepTime: "20 mins",
+    rating: 4.7,
+    ingredients: ["Ground beef", "Onions", "Hard-boiled eggs", "Pastry dough", "Spices"],
+    allergens: ["Gluten", "Eggs"],
+    calories: 380,
+    chef: "Chef Carlos Sol"
   }
 ];
 
 const categories = [
+  { id: "all", name: "All Dishes" },
   { id: "breakfast", name: "Breakfast" },
   { id: "lunch", name: "Lunch" },
   { id: "dinner", name: "Dinner" },
+  { id: "asian", name: "Asian Fusion" },
+  { id: "mediterranean", name: "Mediterranean" },
+  { id: "latin", name: "Latin American" },
   { id: "desserts", name: "Desserts" },
   { id: "drinks", name: "Drinks" }
 ];
 
 export default function Menu() {
-  const [activeCategory, setActiveCategory] = useState("breakfast");
+  const [activeCategory, setActiveCategory] = useState("all");
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
-  const filteredItems = menuItems.filter(item => item.category === activeCategory);
+  const filteredItems = activeCategory === "all" 
+    ? menuItems 
+    : menuItems.filter(item => item.category === activeCategory);
 
   const openModal = (item: MenuItem) => {
     setSelectedItem(item);

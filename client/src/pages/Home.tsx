@@ -4,6 +4,8 @@ import { Star, Award, Clock, Users } from "lucide-react";
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import ChefGallery from "@/components/ChefGallery";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer, hoverScale } from "@/lib/animations";
@@ -497,6 +499,12 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Chef Gallery Section */}
+      <ChefGallery />
+
+      {/* Testimonial Carousel Section */}
+      <TestimonialCarousel />
 
       <Footer />
     </div>
