@@ -15,6 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { insertUserSchema, type InsertUser } from "@shared/schema";
 import { fadeInUp } from "@/lib/animations";
+import { useAuth } from "@/hooks/useAuth";
 import { z } from "zod";
 
 const signupSchema = insertUserSchema.extend({
@@ -31,6 +32,7 @@ export default function Signup() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { login } = useAuth();
   
   const form = useForm<SignupData>({
     resolver: zodResolver(signupSchema),
@@ -45,12 +47,13 @@ export default function Signup() {
     mutationFn: async (data: InsertUser) => {
       return apiRequest("POST", "/api/auth/register", data);
     },
-    onSuccess: () => {
+    onSuccess: (response: any) => {
+      login(response.user);
       toast({
         title: "Account Created!",
-        description: "Welcome to Luna Diner! You can now sign in.",
+        description: "Welcome to Luna Diner! You're now signed in.",
       });
-      setLocation("/login");
+      setLocation("/");
     },
     onError: (error: any) => {
       toast({

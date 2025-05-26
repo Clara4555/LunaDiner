@@ -24,6 +24,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { login } = useAuth();
   
   const form = useForm<LoginData>({
     resolver: zodResolver(loginSchema),
@@ -37,7 +38,8 @@ export default function Login() {
     mutationFn: async (data: LoginData) => {
       return apiRequest("POST", "/api/auth/login", data);
     },
-    onSuccess: () => {
+    onSuccess: (response: any) => {
+      login(response.user);
       toast({
         title: "Welcome back!",
         description: "You've been successfully logged in.",
