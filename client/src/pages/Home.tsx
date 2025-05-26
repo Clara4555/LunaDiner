@@ -66,6 +66,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-charcoal-900">
       <Navigation />
+      
       <Hero />
       
       {/* Featured Dishes Section */}

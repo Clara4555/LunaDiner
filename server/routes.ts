@@ -27,24 +27,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/auth/login", async (req, res) => {
-    try {
-      const { username, password } = req.body;
-      
-      if (!username || !password) {
-        return res.status(400).json({ success: false, error: "Username and password required" });
-      }
-      
-      const user = await storage.getUserByUsername(username);
-      if (!user || user.password !== password) {
-        return res.status(401).json({ success: false, error: "Invalid username or password" });
-      }
-      
-      res.json({ success: true, user: { id: user.id, username: user.username } });
-    } catch (error) {
-      res.status(500).json({ success: false, error: "Login failed" });
+ app.post("/api/auth/login", async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res.status(400).json({ success: false, error: "Username and password required" });
     }
-  });
+
+    const user = await storage.getUserByUsername(username);
+    if (!user || user.password !== password) {
+      return res.status(401).json({ success: false, error: "Invalid username or password" });
+    }
+
+    // Send back user info to frontend (exclude password)
+    res.json({ success: true, user: { id: user.id, username: user.username } });
+  } catch (error) {
+    res.status(500).json({ success: false, error: "Login failed" });
+  }
+});
+
 
   // Reservation routes
   app.post("/api/reservations", async (req, res) => {
