@@ -71,6 +71,7 @@ export class MemStorage implements IStorage {
     const reservation: Reservation = { 
       ...insertReservation, 
       id,
+      specialRequests: insertReservation.specialRequests || null,
       createdAt: new Date()
     };
     this.reservations.set(id, reservation);

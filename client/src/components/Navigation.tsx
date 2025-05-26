@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useScrollEffect } from "@/hooks/useScrollEffect";
 import { slideDown, fadeIn } from "@/lib/animations";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -44,8 +45,8 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <motion.div className="hidden md:block" {...fadeIn}>
-            <div className="ml-10 flex items-baseline space-x-8">
+          <motion.div className="hidden md:flex items-center space-x-8" {...fadeIn}>
+            <div className="flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -59,6 +60,27 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
+            </div>
+            
+            {/* Auth Links */}
+            <div className="flex items-center space-x-4 ml-8">
+              <Link href="/login">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-cream text-cream hover:bg-cream hover:text-black"
+                >
+                  Sign In
+                </Button>
+              </Link>
+              <Link href="/signup">
+                <Button
+                  size="sm"
+                  className="bg-gold text-black hover:bg-gold/90"
+                >
+                  Sign Up
+                </Button>
+              </Link>
             </div>
           </motion.div>
 
@@ -103,6 +125,26 @@ export default function Navigation() {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Mobile Auth Links */}
+              <div className="border-t border-charcoal-600 pt-4 mt-4 space-y-2">
+                <Link href="/login">
+                  <button
+                    className="block w-full text-left px-3 py-2 text-base font-medium text-cream hover:text-gold transition-colors duration-300"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Sign In
+                  </button>
+                </Link>
+                <Link href="/signup">
+                  <button
+                    className="block w-full text-left px-3 py-2 text-base font-medium bg-gold text-black rounded-lg hover:bg-gold/90 transition-colors duration-300"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Sign Up
+                  </button>
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

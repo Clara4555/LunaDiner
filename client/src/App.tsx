@@ -10,6 +10,8 @@ import About from "@/pages/About";
 import Reservations from "@/pages/Reservations";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
+import Login from "@/pages/Login";
+import Signup from "@/pages/Signup";
 
 function Router() {
   return (
@@ -20,6 +22,8 @@ function Router() {
       <Route path="/reservations" component={Reservations} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/contact" component={Contact} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
       <Route component={NotFound} />
     </Switch>
   );

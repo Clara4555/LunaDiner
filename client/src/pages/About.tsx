@@ -33,17 +33,50 @@ const timeline = [
   {
     year: "2020",
     title: "Founded",
-    description: "Luna Diner opens its doors"
+    description: "Luna Diner opens its doors with a vision to create magical dining experiences"
+  },
+  {
+    year: "2021",
+    title: "Recognition",
+    description: "Featured in Food & Wine Magazine as 'Rising Star Restaurant'"
   },
   {
     year: "2022",
-    title: "Recognition",
-    description: "Featured in Food & Wine Magazine"
+    title: "Expansion",
+    description: "Added private dining rooms and expanded our wine cellar"
+  },
+  {
+    year: "2023",
+    title: "Award",
+    description: "Won 'Best Night Dining Experience' by City Food Critics"
   },
   {
     year: "2024",
-    title: "Award",
-    description: "Best Night Dining Experience"
+    title: "Excellence",
+    description: "Achieved Michelin recognition for outstanding culinary innovation"
+  }
+];
+
+const values = [
+  {
+    title: "Quality Ingredients",
+    description: "We source only the finest, locally-sourced ingredients from trusted farmers and suppliers",
+    icon: "🌿"
+  },
+  {
+    title: "Culinary Innovation",
+    description: "Our chefs constantly push boundaries, creating unique flavor combinations and presentations",
+    icon: "🍴"
+  },
+  {
+    title: "Exceptional Service",
+    description: "Every guest receives personalized attention to ensure an unforgettable dining experience",
+    icon: "⭐"
+  },
+  {
+    title: "Sustainable Practices",
+    description: "We're committed to environmentally responsible practices in all aspects of our operation",
+    icon: "🌱"
   }
 ];
 
@@ -136,7 +169,7 @@ export default function About() {
           </motion.div>
 
           {/* Timeline */}
-          <div className="text-center">
+          <div className="text-center mb-20">
             <motion.h3
               className="font-playfair text-3xl font-bold text-cream mb-12"
               {...fadeInUp}
@@ -144,7 +177,7 @@ export default function About() {
               Our Journey
             </motion.h3>
             <motion.div
-              className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12"
+              className="grid md:grid-cols-5 gap-8"
               {...staggerContainer}
             >
               {timeline.map((item) => (
@@ -158,6 +191,39 @@ export default function About() {
                   </div>
                   <h4 className="font-semibold text-cream mb-2">{item.title}</h4>
                   <p className="text-cream/80 text-sm">{item.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Our Values */}
+          <div className="text-center">
+            <motion.h3
+              className="font-playfair text-3xl font-bold text-cream mb-12"
+              {...fadeInUp}
+            >
+              Our Values
+            </motion.h3>
+            <motion.div
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+              {...staggerContainer}
+            >
+              {values.map((value) => (
+                <motion.div
+                  key={value.title}
+                  className="text-center"
+                  {...fadeInUp}
+                  {...hoverScale}
+                >
+                  <Card className="bg-charcoal-700 border-charcoal-600 p-6 h-full shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <CardContent className="p-0">
+                      <div className="text-4xl mb-4">{value.icon}</div>
+                      <h4 className="font-playfair text-xl font-semibold text-cream mb-3">
+                        {value.title}
+                      </h4>
+                      <p className="text-cream/80 text-sm">{value.description}</p>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
             </motion.div>
