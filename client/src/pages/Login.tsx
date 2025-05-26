@@ -15,6 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { insertUserSchema, type InsertUser } from "@shared/schema";
 import { fadeInUp } from "@/lib/animations";
+import { useAuth } from "@/hooks/useAuth";
 
 const loginSchema = insertUserSchema.pick({ username: true, password: true });
 type LoginData = typeof loginSchema._type;
